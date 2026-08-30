@@ -30,5 +30,77 @@
     <p>If you have any questions, please contact the developer via the official repository page.</p>
     <!-- Ссылка с автоматическим заполнением ТЕМЫ и НАЧАЛА текста письма -->
     <p>Написать автору: <a href="mailto:afefelov68@://gmail.com">afefelov68@gmail.com</a></p>
+    <p> </p>
+    <!-- Контейнер формы в фирменном стиле "Будильника Алекса" (English Version) -->
+<div class="alex-feedback-wrapper" style="max-width: 480px; margin: 30px auto; padding: 25px; background: #121214; border: 1px solid #29292e; border-radius: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+    
+    <h3 style="margin-top: 0; margin-bottom: 20px; color: #ffffff; font-size: 18px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px;">
+        ⏰ Contact the App Developer
+    </h3>
+    
+    <!-- Слой вывода успешной отправки (активируется библиотекой Formspree) -->
+    <div data-fs-success style="display: none; padding: 12px 16px; background: #1c352d; border: 1px solid #234b3e; color: #4ade80; border-radius: 6px; font-size: 14px; font-weight: 500; margin-bottom: 15px;">
+        🎉 Thanks! Your message has been successfully sent to Alex.
+    </div>
+    
+    <!-- Слой вывода общих ошибок -->
+    <div data-fs-error style="display: none; padding: 12px 16px; background: #3a1d1d; border: 1px solid #5a2323; color: #f87171; border-radius: 6px; font-size: 14px; font-weight: 500; margin-bottom: 15px;"></div>
+    
+    <!-- Главная утилитарная форма -->
+    <form id="alex-contact-form" style="display: flex; flex-direction: column; gap: 16px;">
+        
+        <!-- Поле ввода E-mail -->
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="email" style="color: #c4c4cc; font-size: 13px; font-weight: 600;">Your E-mail Address:</label>
+            <input type="email" id="email" name="email" required data-fs-field placeholder="name@example.com" 
+                   style="width: 100%; padding: 10px 12px; background: #202024; border: 1px solid #29292e; border-radius: 6px; color: #ffffff; font-size: 14px; box-sizing: border-box; outline: none; transition: border-color 0.2s;">
+            <!-- Поле ошибки для конкретного ввода -->
+            <span data-fs-error="email" style="color: #f87171; font-size: 12px; margin-top: 2px;"></span>
+        </div>
+        
+        <!-- Поле ввода текста -->
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="message" style="color: #c4c4cc; font-size: 13px; font-weight: 600;">Your Message or Feedback:</label>
+            <textarea id="message" name="message" required data-fs-field placeholder="Hi Alex! I have a suggestion regarding the app runtime..." rows="5" 
+                      style="width: 100%; padding: 10px 12px; background: #202024; border: 1px solid #29292e; border-radius: 6px; color: #ffffff; font-size: 14px; box-sizing: border-box; outline: none; resize: vertical; font-family: inherit; transition: border-color 0.2s;"></textarea>
+            <span data-fs-error="message" style="color: #f87171; font-size: 12px; margin-top: 2px;"></span>
+        </div>
+        
+        <!-- Кнопка отправки с поддержкой лоадинг-стейта -->
+        <button type="submit" data-fs-submit-btn 
+                style="background: #e06400; color: #ffffff; border: none; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 4px;">
+            🚀 Send Message
+        </button>
+        
+    </form>
+</div>
+
+<!-- Стили поддержки интерактивных переключений Formspree -->
+<style>
+    .alex-feedback-wrapper input:focus, .alex-feedback-wrapper textarea:focus {
+        border-color: #e06400 !important;
+    }
+    [data-fs-success][data-fs-active], [data-fs-error][data-fs-active] {
+        display: block !important;
+    }
+    [data-fs-field][aria-invalid='true'] {
+        border-color: #f87171 !important;
+    }
+    button[data-fs-submit-btn]:disabled {
+        background: #494950 !important;
+        color: #8d8d99 !important;
+        cursor: not-allowed !important;
+    }
+</style>
+
+<!-- Инициализирующий скрипт AJAX-движка Formspree -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { 
+    formElement: '#alex-contact-form', 
+    formId: 'xdeokvnk'
+  });
+</script>
+<script src="https://unpkg.com" defer></script>
 </body>
 </html>
