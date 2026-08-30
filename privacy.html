@@ -68,29 +68,21 @@
         
         <!-- Кнопка отправки с поддержкой лоадинг-стейта -->
         <button type="submit" data-fs-submit-btn 
-                style="background: #e06400; color: #ffffff; border: none; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 4px;">
+                style="background: #dc2626; color: #ffffff; border: none; padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 4px;">
             🚀 Send Message
-        </button>
-        
+        </button>        
     </form>
 </div>
 
 <!-- Стили поддержки интерактивных переключений Formspree -->
 <style>
     .alex-feedback-wrapper input:focus, .alex-feedback-wrapper textarea:focus {
-        border-color: #e06400 !important;
+        border-color: #ef4444 !important; /* Неоново-красный фокус */
+        box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
     }
-    [data-fs-success][data-fs-active], [data-fs-error][data-fs-active] {
-        display: block !important;
-    }
-    [data-fs-field][aria-invalid='true'] {
-        border-color: #f87171 !important;
-    }
-    button[data-fs-submit-btn]:disabled {
-        background: #494950 !important;
-        color: #8d8d99 !important;
-        cursor: not-allowed !important;
-    }
+    [data-fs-success][data-fs-active], [data-fs-error][data-fs-active] { display: block !important; }
+    [data-fs-field][aria-invalid='true'] { border-color: #f87171 !important; }
+    button[data-fs-submit-btn]:disabled { background: #494950 !important; color: #8d8d99 !important; cursor: not-allowed !important; }
 </style>
 
 <!-- Инициализирующий скрипт AJAX-движка Formspree -->
