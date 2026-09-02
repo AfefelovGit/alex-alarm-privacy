@@ -28,32 +28,29 @@
     <h2>3. Revoking Permissions and Deletion</h2>
     <p>You can delete any voice reminder directly inside the app using the hold-to-delete gesture. You can fully revoke microphone permissions at any time via iOS System Settings -> Privacy & Security -> Microphone.</p>
     
-    <!-- 🔥 НАШ ЮРИДИЧЕСКИЙ ЩИТ ДЛЯ АННУЛИРОВАНИЯ ЗАМЕЧАНИЯ P2-06 -->
     <h2>4. Website Feedback Form Data Processing</h2>
     <p>While the mobile application itself transmits nothing over the network, if you voluntarily choose to contact the developer via the feedback form provided below, your email address and message contents will be securely processed by our third-party form delivery service, Formspree (Formspree Inc.), strictly to route your message to the developer's mailbox. This data is handled in accordance with Formspree's data security guidelines and is never used for tracking or marketing analytics.</p>
 
     <h2>5. Support Contact</h2>
     <p>If you have any questions or bug reports, please feel free to use the form below or contact the author via email directly:</p>
-    <!-- Ювелирно исправленная и стерильная ссылка mailto без мусорных символов -->
     <p>Direct Email: <a href="mailto:afefelov68@://gmail.com">afefelov68@gmail.com</a></p>
     
-    <!-- Контейнер формы в фирменном стиле "Будильника Алекса" (English Version) -->
+    <!-- Контейнер формы обратной связи Formspree AJAX -->
     <div class="alex-feedback-wrapper" style="max-width: 480px; margin: 30px auto; padding: 25px; background: #121214; border: 1px solid #29292e; border-radius: 12px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
         
         <h3 style="margin-top: 0; margin-bottom: 20px; color: #ffffff; font-size: 18px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px;">
             ⏰ Contact the App Developer
         </h3>
         
-        <!-- Слой вывода успешной отправки (активируется библиотекой Formspree) -->
+        <!-- Элементы вывода статусов Formspree (По спецификации 2026 года) -->
         <div data-fs-success style="display: none; padding: 12px 16px; background: #1c352d; border: 1px solid #234b3e; color: #4ade80; border-radius: 6px; font-size: 14px; font-weight: 500; margin-bottom: 15px;">
             🎉 Thanks! Your message has been successfully sent to Alex.
         </div>
         
-        <!-- Слой вывода общих ошибок -->
         <div data-fs-error style="display: none; padding: 12px 16px; background: #3a1d1d; border: 1px solid #5a2323; color: #f87171; border-radius: 6px; font-size: 14px; font-weight: 500; margin-bottom: 15px;"></div>
         
-        <!-- Главная утилитарная форма -->
-        <form id="alex-contact-form" style="display: flex; flex-direction: column; gap: 16px;">
+        <!-- Жестко зафиксированный ID формы: contact-form -->
+        <form id="contact-form" style="display: flex; flex-direction: column; gap: 16px;">
             
             <!-- Поле ввода E-mail -->
             <div style="display: flex; flex-direction: column; gap: 6px;">
@@ -93,25 +90,12 @@
     <!-- Инициализирующий скрипт AJAX-движка Formspree -->
     <script>
       window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      // Синхронизировано: селектор '#contact-form' и ваш эндпоинт 'xdeokvnk'
       formspree('initForm', { 
-        formElement: '#alex-contact-form', 
+        formElement: '#contact-form', 
         formId: 'xdeokvnk'
       });
     </script>
-    <!-- 🔥 ВОТ ЗДЕСЬ ИСПРАВЛЕНО НА ОФИЦИАЛЬНЫЙ ПАКЕТ ИЗ CDN UNPKG: -->
-    <script src="https://unpkg.com" defer></script>
-
-    
-<!-- Инициализирующий скрипт AJAX-движка Formspree -->
-<!--     
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { 
-    formElement: '#alex-contact-form', 
-    formId: 'xdeokvnk'
-  });
-</script>
-<script src="https://unpkg.com" defer></script> 
-     -->
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
